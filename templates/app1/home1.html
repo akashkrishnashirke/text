@@ -1,0 +1,41 @@
+<!doctype html>
+{%extends 'app1/base.html'%}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  {% block base_block %}
+  <body>
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<form action="/show2/" method="post"> {% csrf_token %}
+<div class="container">
+
+            <label for="exampleFormControlTextarea1" class="form-label">ENTER YOUR TEXT</label>
+          <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+</div>
+
+  <div class="container">
+  <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+  <label class="form-check-label" for="flexSwitchCheckDefault1">REMOVE PUNC</label>
+</div>
+   <div class="container">
+  <input class="form-check-input" name="fullcaf" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+  <label class="form-check-label" for="flexSwitchCheckDefault2">CAPITALISE</label>
+</div>
+   <div class="container">
+  <input class="form-check-input" name="charactor" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+  <label class="form-check-label" for="flexSwitchCheckDefault3">CHARACTOR COUNT</label> <br>
+
+     <button type="submit">submit</button>
+</div>
+  </form>
+{% endblock %}
+  </body>
+</html>
